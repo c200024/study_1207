@@ -23,7 +23,7 @@
     $sql = "SELECT * FROM user WHERE id = :id";
     $stmt = $dbh->prepare($sql);
     /* (1)ここに適切なバインド処理を追加して下さい  */
-
+    $stmt->bindValue(":id", $edit, PDO::PARAM_INT);
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -55,12 +55,15 @@
             <div class="col-sm-8 col-sm-offset-2">
                 <div class="form-group">
                     <label for="name"><span class="required">お名前</span> </label>
-                    /* (2)ここに「名前」欄の初期表示処理を追加して下さい  */
+                    <input type="text" name="name" value="<?php echo $row['name'];?>">
+                    
+                    <!--/* (2)ここに「名前」欄の初期表示処理を追加して下さい  */-->
 
                 </div>
                 <div class="form-group">
                     <label for="email"><span class="required">メールアドレス</span> </label>
-                    /* (3)ここに「メールアドレス」欄の初期表示処理を追加して下さい  */
+                    <input type="text" name="email" value="<?php echo $row['email']; ?>">
+                    <!--/* (3)ここに「メールアドレス」欄の初期表示処理を追加して下さい  */-->
 
                 </div>
                 <div class="form-group">
@@ -68,27 +71,28 @@
                     <div>
                     <?php
                           echo "<label class='radio-inline'>";
-                          echo "    <input type='radio' name='gender' value='1' required";
+                          echo "<input type='radio' name='gender' value='1' required";
                           if( $row[gender] === 1 ) {
-　　　　　　　　　　　　　　　　/* (4)ここにラジオボタンの初期表示処理を追加してください  */
+                              echo "checked = 'true'>男性";/* (4)ここにラジオボタンの初期表示処理を追加してください  */
 
                           } else {
                           	 echo ">男性";
                           }
                           echo "</label>";
                           echo "<label class='radio-inline'>";
-                          echo "    <input type='radio' name='gender' value='2' required";
+                          echo "<input type='radio' name='gender' value='2' required";
                           if( $row[gender] === 2 ) {
-　　　　　　　　　　　　　　　　/* (5)ここにラジオボタンの初期表示処理を追加してください  */
+                              
+                              echo "checked = 'true'>女性";/* (5)ここにラジオボタンの初期表示処理を追加してください  */
 
                           } else {
                           	 echo ">女性";
                           }
                           echo "</label>";
                           echo "<label class='radio-inline'>";
-                          echo "    <input type='radio' name='gender' value='9' required";
+                          echo "<input type='radio' name='gender' value='9' required";
                           if( $row[gender] === 9 ) {
-　　　　　　　　　　　　　　　　/* (6)ここにラジオボタンの初期表示処理を追加してください  */
+                              echo "checked = 'true'>その他";/* (6)ここにラジオボタンの初期表示処理を追加してください  */
 
                           } else {
                           	 echo ">その他";
