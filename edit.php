@@ -55,14 +55,14 @@
             <div class="col-sm-8 col-sm-offset-2">
                 <div class="form-group">
                     <label for="name"><span class="required">お名前</span> </label>
-                    <input type="text" name="name" value="<?php echo $row['name'];?>">
+                    <input type="text" id="name" name="name" value="<?php echo $row['name'];?>"reqired>
                     
                     <!--/* (2)ここに「名前」欄の初期表示処理を追加して下さい  */-->
 
                 </div>
                 <div class="form-group">
                     <label for="email"><span class="required">メールアドレス</span> </label>
-                    <input type="text" name="email" value="<?php echo $row['email']; ?>">
+                    <input type="text" id="email" name="email" value="<?php echo $row['email'];?>"reqired>
                     <!--/* (3)ここに「メールアドレス」欄の初期表示処理を追加して下さい  */-->
 
                 </div>
@@ -71,29 +71,28 @@
                     <div>
                     <?php
                           echo "<label class='radio-inline'>";
-                          echo "<input type='radio' name='gender' value='1' required";
+                          echo "   <input type='radio' name='gender' value='1' required";
                           if( $row[gender] === 1 ) {
-                              echo "checked = 'true'>男性";/* (4)ここにラジオボタンの初期表示処理を追加してください  */
+                              echo "checked>男性";
 
                           } else {
                           	 echo ">男性";
                           }
                           echo "</label>";
                           echo "<label class='radio-inline'>";
-                          echo "<input type='radio' name='gender' value='2' required";
+                          echo "   <input type='radio' name='gender' value='2' required";
                           if( $row[gender] === 2 ) {
-                              
-                              echo "checked = 'true'>女性";/* (5)ここにラジオボタンの初期表示処理を追加してください  */
+                              echo "checked>女性";
 
                           } else {
                           	 echo ">女性";
                           }
                           echo "</label>";
                           echo "<label class='radio-inline'>";
-                          echo "<input type='radio' name='gender' value='9' required";
+                          echo "   <input type='radio' name='gender' value='9' required";
                           if( $row[gender] === 9 ) {
-                              echo "checked = 'true'>その他";/* (6)ここにラジオボタンの初期表示処理を追加してください  */
-
+                              echo "checked>その他";
+                              
                           } else {
                           	 echo ">その他";
                           }

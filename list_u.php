@@ -77,7 +77,8 @@ try{
         ?>
     </td>
     <td>
-        <input type="radio" name="edit" value="<?php echo $row['id']; ?>">編集
+        <input type='radio' name='edit' id='edit' value="<?php echo $row['id']; ?>"><label for="edit">編集</label>
+        <!--<input type='radio' name='edit' id='edit' value="<?php echo $row['id']; ?>">編集-->
         <!--/*  (2)ここにラジオボタン表示処理を追加して下さい  */-->
         
 
